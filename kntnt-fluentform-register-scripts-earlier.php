@@ -50,7 +50,9 @@ defined( 'ABSPATH' ) || die;
  * action. These callbacks do the registration (but not the enqueuing, which is
  * deferred as explained above). The code finds Fluentforms callbacks, execute
  * them directly, and remove them from the list of callbacks to be called at
- * the wp_enqueue_scripts action.
+ * the wp_enqueue_scripts action. Remember that the directly called functions
+ * don't enqueue styles and scripts despite being called at the
+ * wp_enqueue_scripts action.
  */
 add_action( 'wp_loaded', function () {
 	global $wp_filter;
